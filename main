@@ -1,0 +1,7 @@
+/app
+  /page.tsx
+  /layout.tsx
+package.json
+next.config.js
+tsconfig.json
+... outros arquivos de configuração (tailwind, postcss, etc.)
