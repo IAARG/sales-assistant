@@ -11,3 +11,4 @@ module.exports = {
   },
   plugins: [],
 };
+Corrigir localização do tailwind.config.js
