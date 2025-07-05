@@ -6,3 +6,4 @@ export default function Home() {
     </main>
   );
 }
+Renomear pasta de aplicativo para app

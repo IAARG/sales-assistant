@@ -11,3 +11,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   );
 }
 Criar layout.tsx na pasta app
+Renomear pasta de aplicativo para app
