@@ -9,3 +9,4 @@ module.exports = {
   },
   plugins: [],
 }
+Renomear pasta de aplicativo para app
