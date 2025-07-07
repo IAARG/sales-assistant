@@ -1,0 +1,7 @@
+/app
+  ├── page.tsx         ← página principal
+  └── layout.tsx       ← layout padrão (obrigatório para app/)
+tailwind.config.js
+postcss.config.js
+next.config.js
+package.json
