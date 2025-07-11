@@ -12,6 +12,7 @@
     "reação-dom": "18.2.0"
   },
   "devDependencies": {
-    "datilografado": "^5.0.0"
+  "typescript": "^5.0.0"
+
   }
 }
