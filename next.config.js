@@ -5,5 +5,6 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
-Renomear pasta de aplicativo para app
+module.exports = nextConfig;
+
+// Renomear pasta de aplicativo para "app"
