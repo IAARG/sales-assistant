@@ -1,14 +1,24 @@
-export const metadata = {
-  title: 'Assistente de Vendas',
-  description: 'Sistema com IA para ajudar vendedores.',
+// app/layout.tsx
+
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Sales Assistant',
+  description: 'IA para vendedores em tempo real',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="pt">
-      <body>{children}</body>
+    <html lang="pt-BR">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
-Criar layout.tsx na pasta app
-Renomear pasta de aplicativo para app
