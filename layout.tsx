@@ -1,14 +1,9 @@
 // app/layout.tsx
-
 import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Sales Assistant',
-  description: 'IA para vendedores em tempo real',
+  description: 'Assistente de vendas com IA em tempo real',
 };
 
 export default function RootLayout({
@@ -18,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
