@@ -1,59 +1,39 @@
-"use client";
+'use client';
 
-import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../../api/auth/[...nextauth]/route';
+import { Button } from '@/components/ui/button';
+import { FcGoogle } from 'react-icons/fc';
+import { FaGithub } from 'react-icons/fa';
+import { signIn } from 'next-auth/react';
 
-export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const loginWithCredentials = async () => {
-    await signIn("credentials", {
-      email,
-      password,
-      callbackUrl: "/dashboard",
-    });
-  };
+export default async function LoginPage() {
+  const session = await getServerSession(authOptions);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Login</h1>
+    <div className="flex flex-col items-center justify-center h-screen space-y-6">
+      <h1 className="text-4xl font-bold">IAARG – Assistente de Vendas com IA 🤖</h1>
+      <p className="text-lg text-gray-600">Faça login para começar</p>
 
-      <input
-        className="mb-2 p-2 border border-gray-300 rounded w-64"
-        type="email"
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        className="mb-4 p-2 border border-gray-300 rounded w-64"
-        type="password"
-        placeholder="Senha"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className="space-y-4">
+        <Button
+          variant="outline"
+          onClick={() => signIn('google')}
+          className="flex items-center gap-2"
+        >
+          <FcGoogle size={20} />
+          Entrar com Google
+        </Button>
 
-      <button
-        onClick={loginWithCredentials}
-        className="mb-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-      >
-        Entrar com Email/Senha
-      </button>
-
-      <hr className="my-4 w-64 border-gray-300" />
-
-      <button
-        onClick={() => signIn("google")}
-        className="mb-2 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
-      >
-        Entrar com Google
-      </button>
-
-      <button
-        onClick={() => signIn("github")}
-        className="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-900"
-      >
-        Entrar com GitHub
-      </button>
+        <Button
+          variant="outline"
+          onClick={() => signIn('github')}
+          className="flex items-center gap-2"
+        >
+          <FaGithub size={20} />
+          Entrar com GitHub
+        </Button>
+      </div>
     </div>
   );
 }
