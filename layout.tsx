@@ -1,12 +1,4 @@
-// app/layout.tsx
-import './globals.css';
-
-export const metadata = {
-  title: 'Sales Assistant',
-  description: 'Assistente de vendas com IA em tempo real',
-};
-
-export default function RootLayout({
+export default function LoginLayout({
   children,
 }: {
   children: React.ReactNode;
