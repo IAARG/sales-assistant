@@ -1,9 +1,15 @@
-{
+echo '{
   "redirects": [
     {
-      "source": "https://iaarg.com.br/:path*",
-      "destination": "https://www.iaarg.com.br/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "iaarg.com.br"
+        }
+      ],
+      "destination": "https://www.iaarg.com.br/:1",
       "permanent": true
     }
   ]
-}
+}' > vercel.json
