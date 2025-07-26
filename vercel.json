@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://iaarg.com.br/:path*",
+      "destination": "https://www.iaarg.com.br/:path*",
+      "permanent": true
+    }
+  ]
+}
