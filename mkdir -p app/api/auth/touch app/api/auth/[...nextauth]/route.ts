@@ -20,7 +20,6 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // Lógica customizada (pode conectar com banco)
         if (
           credentials?.email === process.env.ADMIN_EMAIL &&
           credentials?.password === process.env.ADMIN_PASSWORD
