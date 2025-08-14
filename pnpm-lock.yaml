@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      credentials:
+        specifier: link:next-auth/providers/credentials
+        version: link:next-auth/providers/credentials
+      github:
+        specifier: link:next-auth/providers/github
+        version: link:next-auth/providers/github
+      google:
+        specifier: link:next-auth/providers/google
+        version: link:next-auth/providers/google
       next:
         specifier: 14.1.0
         version: 14.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
