@@ -1,14 +1,9 @@
-export const metadata = {
-  title: 'Assistente de Vendas',
-  description: 'Sistema com IA para ajudar vendedores.',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+// app/layout.tsx
+import './globals.css'
+export default function RootLayout({ children }) {
   return (
-    <html lang="pt">
+    <html lang="en">
       <body>{children}</body>
     </html>
-  );
+  )
 }
-Criar layout.tsx na pasta app
-Renomear pasta de aplicativo para app
