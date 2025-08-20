@@ -1,10 +1,9 @@
-// app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IAARG - Assistente de Vendas",
-  description: "Seu assistente de vendas inteligente com IA e transcrição em tempo real",
+  title: "IAARG – Seu assistente de vendas inteligente",
+  description: "Assistente de vendas com IA em tempo real",
 };
 
 export default function RootLayout({
