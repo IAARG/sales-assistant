@@ -1,19 +1,9 @@
-import "./globals.css";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "IAARG – Seu assistente de vendas inteligente",
-  description: "Assistente de vendas com IA em tempo real",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// app/layout.tsx
+import './globals.css'
+export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body>{children}</body>
     </html>
-  );
+  )
 }
