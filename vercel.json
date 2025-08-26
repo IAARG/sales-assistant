@@ -1,6 +1,5 @@
 {
-  "installCommand": "pnpm install --ignore-scripts --strict-peer-dependencies=false",
+  "installCommand": "pnpm install --strict-peer-dependencies=false",
   "buildCommand": "pnpm run build",
-  "devCommand": "pnpm dev",
-  "framework": "nextjs"
+  "devCommand": "pnpm dev"
 }
