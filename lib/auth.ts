@@ -1,9 +1,12 @@
 import NextAuth from 'next-auth'
-import GoogleProvider from 'next-auth/providers/google'
-import GitHubProvider from 'next-auth/providers/github'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+export const {
+  handlers: { GET, POST },
+  auth,
+  signIn,
+  signOut,
+} = NextAuth({
   providers: [
     CredentialsProvider({
       name: 'credentials',
@@ -12,21 +15,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials) {
-        // Implementação simples para teste
-        if (credentials?.email === 'test@test.com' && credentials?.password === 'password') {
-          return { id: '1', email: 'test@test.com', name: 'Test User' }
+        // Login simples para teste - depois conectamos com database
+        if (credentials?.email === 'admin@sales.com' && credentials?.password === 'admin123') {
+          return { id: '1', email: 'admin@sales.com', name: 'Administrador' }
         }
         return null
       }
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || '',
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || ''
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID || '',
-      clientSecret: process.env.GITHUB_SECRET || ''
     })
   ],
-  session: { strategy: 'jwt' }
+  session: { strategy: 'jwt' },
+  pages: {
+    signIn: '/login',
+    error: '/auth/error'
+  }
 })
