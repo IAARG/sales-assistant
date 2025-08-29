@@ -13,9 +13,13 @@ export default function LoginPage() {
     e.preventDefault()
     setIsLoading(true)
     
-    // Simulação de login - depois conectamos com NextAuth
+    // Autenticação SIMPLES - sem NextAuth
     if (email === 'admin@sales.com' && password === 'admin123') {
-      // Login bem-sucedido - redireciona para dashboard
+      // Salva no localStorage (simulação de sessão)
+      localStorage.setItem('userAuthenticated', 'true')
+      localStorage.setItem('userEmail', email)
+      
+      // Redireciona para dashboard
       router.push('/dashboard')
     } else {
       alert('Login falhou. Use: admin@sales.com / admin123')

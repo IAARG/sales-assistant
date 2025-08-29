@@ -1,13 +1,36 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Dashboard() {
   const router = useRouter()
+  const [userEmail, setUserEmail] = useState('')
+
+  useEffect(() => {
+    // Verifica se o usuário está autenticado
+    const isAuthenticated = localStorage.getItem('userAuthenticated')
+    const email = localStorage.getItem('userEmail')
+    
+    if (!isAuthenticated) {
+      router.push('/login')
+    } else {
+      setUserEmail(email || 'Usuário')
+    }
+  }, [router])
 
   const handleLogout = () => {
-    // Simulação de logout - depois conectamos com NextAuth
+    localStorage.removeItem('userAuthenticated')
+    localStorage.removeItem('userEmail')
     router.push('/')
+  }
+
+  if (!userEmail) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+      </div>
+    )
   }
 
   return (
@@ -18,7 +41,7 @@ export default function Dashboard() {
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-gray-900">Dashboard de Vendas</h1>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Olá, Administrador</span>
+              <span className="text-gray-700">Olá, {userEmail}</span>
               <button
                 onClick={handleLogout}
                 className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
