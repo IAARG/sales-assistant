@@ -9,17 +9,13 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     
-    // Autenticação SIMPLES - sem NextAuth
+    // Login SIMPLES sem NextAuth
     if (email === 'admin@sales.com' && password === 'admin123') {
-      // Salva no localStorage (simulação de sessão)
-      localStorage.setItem('userAuthenticated', 'true')
-      localStorage.setItem('userEmail', email)
-      
-      // Redireciona para dashboard
+      // Redireciona diretamente - sem localStorage para evitar problemas
       router.push('/dashboard')
     } else {
       alert('Login falhou. Use: admin@sales.com / admin123')
@@ -36,7 +32,6 @@ export default function LoginPage() {
             <span className="text-white font-bold text-xl">SA</span>
           </div>
           <h1 className="text-3xl font-bold text-gray-900">Sales Assistant</h1>
-          <p className="text-gray-600 mt-2">Sistema de Consultoria de Vendas</p>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -69,17 +64,14 @@ export default function LoginPage() {
             disabled={isLoading}
             className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
           >
-            {isLoading ? 'Entrando...' : 'Entrar no Sistema'}
+            {isLoading ? 'Entrando...' : 'Entrar'}
           </button>
         </form>
 
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
-            Use: <strong>admin@sales.com</strong> / <strong>admin123</strong>
+            Use: admin@sales.com / admin123
           </p>
-          <a href="/" className="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block">
-            ← Voltar para a página inicial
-          </a>
         </div>
       </div>
     </div>
