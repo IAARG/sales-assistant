@@ -1,6 +1,19 @@
 {
-  "installCommand": "yarn install",
-  "buildCommand": "yarn build",
-  "devCommand": "yarn dev",
-  "framework": "nextjs"
+  "version": 3,
+  "builds": [
+    {
+      "src": "iaarg.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/iaarg.html"
+    },
+    {
+      "src": "/(.*)", 
+      "dest": "/iaarg.html"
+    }
+  ]
 }
