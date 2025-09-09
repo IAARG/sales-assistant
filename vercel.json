@@ -2,18 +2,14 @@
   "version": 3,
   "builds": [
     {
-      "src": "iaarg.html",
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/iaarg.html"
-    },
-    {
-      "src": "/(.*)", 
-      "dest": "/iaarg.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
