@@ -6,7 +6,6 @@
     <title>IAARG - Inteligência Artificial Avançada</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset e variáveis */
         :root {
             --primary: #1a2980;
             --secondary: #26d0ce;
@@ -29,7 +28,6 @@
             overflow-x: hidden;
         }
         
-        /* Container principal */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -37,7 +35,7 @@
             padding: 0 20px;
         }
         
-        /* Header e navegação */
+        /* Header */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -137,7 +135,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        /* Sections comuns */
+        /* Sections */
         section {
             padding: 80px 0;
         }
@@ -159,7 +157,7 @@
             margin: 0 auto;
         }
         
-        /* Serviços */
+        /* Services */
         .services {
             background-color: var(--light);
         }
@@ -195,7 +193,7 @@
             color: var(--primary);
         }
         
-        /* Sobre */
+        /* About */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -218,15 +216,16 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
         }
         
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Contato */
+        /* Contact */
         .contact {
             background-color: var(--light);
         }
@@ -352,7 +351,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
         
-        /* Responsividade */
+        /* Responsive */
         @media (max-width: 992px) {
             .about-content {
                 grid-template-columns: 1fr;
@@ -440,7 +439,7 @@
         </div>
     </section>
 
-    <!-- Serviços -->
+    <!-- Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
@@ -473,7 +472,7 @@
         </div>
     </section>
 
-    <!-- Sobre -->
+    <!-- About -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
@@ -488,13 +487,14 @@
                     <a href="#contact" class="btn">Entre em Contato</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Equipe IAARG">
+                    <i class="fas fa-rocket fa-5x"></i>
+                    <p>Sua empresa impulsionada por IA</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -634,6 +634,12 @@
                     });
                 }
             });
+        });
+
+        // Mostrar mensagem de que o site está funcionando
+        window.addEventListener('load', function() {
+            console.log('Site IAARG está funcionando perfeitamente!');
+            console.log('Acesse www.iaarg.com.br para ver o site no ar.');
         });
     </script>
 </body>
