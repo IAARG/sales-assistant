@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'yarn'
+          cache: 'npm'  # Alterado para npm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install  # Alterado para npm
 
       - name: Build with Next.js
-        run: yarn run build
+        run: npm run build  # Alterado para npm
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out  # Esta é a pasta padrão do 'output: export' do Next.js
+          path: ./out
 
   deploy:
     environment:
