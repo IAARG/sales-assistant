@@ -5,7 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/sales-assistant' // ← IMPORTANTE para GitHub Pages
+  basePath: '/sales-assistant', // ← ESTA LINHA É CRUCIAL!
+  assetPrefix: '/sales-assistant/' // ← ESTA TAMBÉM!
 }
 
 module.exports = nextConfig
