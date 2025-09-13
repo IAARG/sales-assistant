@@ -1,3 +1,5 @@
+"use client"; // ← ESTA LINHA RESOLVE O PROBLEMA!
+
 export default function Home() {
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
