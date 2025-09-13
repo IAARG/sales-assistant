@@ -5,10 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Remove a configuração experimental se não for mais necessária
-  // experimental: {
-  //   appDir: true
-  // }
+  basePath: '/sales-assistant' // ← IMPORTANTE para GitHub Pages
 }
 
 module.exports = nextConfig
