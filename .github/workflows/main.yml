@@ -29,8 +29,19 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
-      - name: List files after build (DEBUG)  # PASSO NOVO PARA DEBUG
-        run: ls -la
+      - name: Debug - List all files and folders
+        run: |
+          echo "=== ESTRUTURA DE PASTAS ==="
+          ls -la
+          echo ""
+          echo "=== CONTEÚDO DO PACKAGE.JSON ==="
+          cat package.json
+          echo ""
+          echo "=== VERIFICANDO PASTAS COMUNS ==="
+          [ -d "./out" ] && echo "Pasta 'out' existe!" || echo "Pasta 'out' NÃO existe!"
+          [ -d "./dist" ] && echo "Pasta 'dist' existe!" || echo "Pasta 'dist' NÃO existe!"
+          [ -d "./build" ] && echo "Pasta 'build' existe!" || echo "Pasta 'build' NÃO existe!"
+          [ -d "./.next" ] && echo "Pasta '.next' existe!" || echo "Pasta '.next' NÃO existe!"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
