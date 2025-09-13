@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true
-  }
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  // Remove a configuração experimental se não for mais necessária
+  // experimental: {
+  //   appDir: true
+  // }
 }
 
-module.exports = nextConfi;
+module.exports = nextConfig
