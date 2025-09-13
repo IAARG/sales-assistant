@@ -28,9 +28,6 @@ jobs:
 
       - name: Build with Next.js
         run: yarn run build
-        # Se precisar de variáveis de ambiente, descomente as linhas abaixo:
-        # env:
-        #   MINHA_VARIAVEL: ${{ secrets.MINHA_VARIAVEL }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -38,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./out  # Esta é a pasta padrão do 'output: export' do Next.js
 
   deploy:
     environment:
