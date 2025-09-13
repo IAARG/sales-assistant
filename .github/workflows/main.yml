@@ -26,9 +26,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-- name: Build with Next.js
-  run: yarn run build
-# ou use 'npm run build' se você usa npm
+      - name: Build with Next.js
+        run: yarn run build
         # Se precisar de variáveis de ambiente, descomente as linhas abaixo:
         # env:
         #   MINHA_VARIAVEL: ${{ secrets.MINHA_VARIAVEL }}
