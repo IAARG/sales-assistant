@@ -1,4 +1,4 @@
-name: Deploy Next.js to GitHub Pages
+name: Deploy Static Site to GitHub Pages
 
 on:
   push:
@@ -17,39 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build with Next.js
-        run: npm run build
-
-      - name: Debug - List all files and folders
-        run: |
-          echo "=== ESTRUTURA DE PASTAS ==="
-          ls -la
-          echo ""
-          echo "=== CONTEÚDO DO PACKAGE.JSON ==="
-          cat package.json
-          echo ""
-          echo "=== VERIFICANDO PASTAS COMUNS ==="
-          [ -d "./out" ] && echo "Pasta 'out' existe!" || echo "Pasta 'out' NÃO existe!"
-          [ -d "./dist" ] && echo "Pasta 'dist' existe!" || echo "Pasta 'dist' NÃO existe!"
-          [ -d "./build" ] && echo "Pasta 'build' existe!" || echo "Pasta 'build' NÃO existe!"
-          [ -d "./.next" ] && echo "Pasta '.next' existe!" || echo "Pasta '.next' NÃO existe!"
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: .  # Usa a RAIZ do repositório com os arquivos HTML
 
   deploy:
     environment:
